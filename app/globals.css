@@ -1,1 +1,188 @@
 @import "tailwindcss";
+
+/* Variables CSS para los temas */
+:root {
+  /* Modo Claro */
+  --color-legal-gold: #F4B942;
+  --color-tech-blue: #1E88E5;
+  --color-corporate-gray: #4A5568;
+
+  --color-bg-primary: #F8FAFC;  /* 🌊 Blanco azulado suave */
+  --color-bg-secondary: #F1F5F9; /* Azul muy claro para cards */
+  --color-bg-tertiary: #E2E8F0;
+
+  --color-text-primary: #2C3E50;
+  --color-text-secondary: #6C757D;
+  --color-text-muted: #9CA3AF;
+
+  --color-border-primary: #E2E8F0;
+  --color-border-secondary: #CBD5E0;
+
+  --color-success: #28A745;
+  --color-error: #DC3545;
+  --color-warning: #FFC107;
+  --color-info: #17A2B8;
+
+  --gradient-legal: linear-gradient(135deg, #F4B942 0%, #1E88E5 100%);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-legal: 0 10px 30px rgba(244, 185, 66, 0.15);
+  --shadow-tech: 0 4px 15px rgba(30, 136, 229, 0.3);
+}
+
+.dark {
+  /* Modo Oscuro */
+  --color-legal-gold: #D4A92A;
+  --color-tech-blue: #1565C0;
+  --color-corporate-gray: #718096;
+
+  --color-bg-primary: #0F1419;   /* 🌊 Azul marino oscuro */
+  --color-bg-secondary: #1A2332; /* Azul más claro para cards */
+  --color-bg-tertiary: #2D3748;
+
+  --color-text-primary: #E2E8F0;
+  --color-text-secondary: #94A3B8;
+  --color-text-muted: #64748B;
+
+  --color-border-primary: #4A5568;
+  --color-border-secondary: #718096;
+
+  --color-success: #22C55E;
+  --color-error: #EF4444;
+  --color-warning: #F59E0B;
+  --color-info: #0EA5E9;
+
+  --gradient-legal: linear-gradient(135deg, #D4A92A 0%, #1565C0 100%);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-legal: 0 10px 30px rgba(212, 169, 42, 0.15);
+  --shadow-tech: 0 4px 15px rgba(21, 101, 192, 0.3);
+}
+
+/* Estilos base para el tema */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-feature-settings: 'rlig' 1, 'calt' 1;
+}
+
+/* Clases utilitarias personalizadas */
+.bg-legal-gradient {
+  background: var(--gradient-legal);
+}
+
+.bg-primary {
+  background-color: var(--color-bg-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-bg-secondary);
+}
+
+.bg-tertiary {
+  background-color: var(--color-bg-tertiary);
+}
+
+.text-legal-gold {
+  color: var(--color-legal-gold);
+}
+
+.text-tech-blue {
+  color: var(--color-tech-blue);
+}
+
+.text-corporate-gray {
+  color: var(--color-corporate-gray);
+}
+
+.text-primary {
+  color: var(--color-text-primary);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.bg-legal-gold {
+  background-color: var(--color-legal-gold);
+}
+
+.bg-tech-blue {
+  background-color: var(--color-tech-blue);
+}
+
+.shadow-legal {
+  box-shadow: var(--shadow-legal);
+}
+
+.shadow-tech {
+  box-shadow: var(--shadow-tech);
+}
+
+.shadow-card-theme {
+  box-shadow: var(--shadow-card);
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-corporate-gray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-tech-blue);
+}
+
+/* Focus styles mejorados */
+.focus-legal:focus {
+  outline: 2px solid var(--color-legal-gold);
+  outline-offset: 2px;
+}
+
+.focus-tech:focus {
+  outline: 2px solid var(--color-tech-blue);
+  outline-offset: 2px;
+}
+
+/* Animaciones de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Prevenir flash de contenido sin estilo */
+.no-flash * {
+  transition: none !important;
+  animation: none !important;
+}

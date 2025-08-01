@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { RequestOptions } from "@/src/types/api";
-import { API_URL } from "@/config/config";
+import { RequestOptions } from "@/types/api";
+import { API_URL } from "../../config/config";
 
 const defaultHeaders = {
   "Content-Type": "application/json",
