@@ -6,11 +6,11 @@ export function useTheme() {
   return useThemeContext()
 }
 
-// Hook para obtener las clases de tema actuales
+// Hook for get current them classes
 export function useThemeClasses() {
   const { theme, isLoading } = useTheme()
-  
-  // Si está cargando, usar clases por defecto
+
+  // If is loading, use default classes
   if (isLoading) {
     return {
       bgPrimary: 'bg-white',
@@ -37,29 +37,29 @@ export function useThemeClasses() {
       cardShadow: 'shadow-md',
     }
   }
-  
+
   return {
-    // Fondos
+    // Backgrounds
     bgPrimary: theme === 'light' ? 'bg-white' : 'bg-gray-900',
     bgSecondary: theme === 'light' ? 'bg-gray-50' : 'bg-gray-800',
     bgTertiary: theme === 'light' ? 'bg-gray-100' : 'bg-gray-700',
-    
-    // Textos
+
+    // Text colors
     textPrimary: theme === 'light' ? 'text-gray-900' : 'text-gray-100',
     textSecondary: theme === 'light' ? 'text-gray-600' : 'text-gray-300',
     textMuted: theme === 'light' ? 'text-gray-500' : 'text-gray-400',
-    
-    // Colores de acento
+
+    // Colors
     legalGold: theme === 'light' ? 'text-yellow-500' : 'text-yellow-400',
     legalGoldBg: theme === 'light' ? 'bg-yellow-500' : 'bg-yellow-400',
     techBlue: theme === 'light' ? 'text-blue-600' : 'text-blue-400',
     techBlueBg: theme === 'light' ? 'bg-blue-600' : 'bg-blue-400',
-    
+
     // Bordes
     border: theme === 'light' ? 'border-gray-200' : 'border-gray-600',
     borderSecondary: theme === 'light' ? 'border-gray-300' : 'border-gray-500',
-    
-    // Estados
+
+    // States
     success: theme === 'light' ? 'text-green-600' : 'text-green-400',
     successBg: theme === 'light' ? 'bg-green-600' : 'bg-green-400',
     error: theme === 'light' ? 'text-red-600' : 'text-red-400',
@@ -68,14 +68,17 @@ export function useThemeClasses() {
     warningBg: theme === 'light' ? 'bg-yellow-600' : 'bg-yellow-400',
     info: theme === 'light' ? 'text-blue-600' : 'text-blue-400',
     infoBg: theme === 'light' ? 'bg-blue-600' : 'bg-blue-400',
-    
-    // Sombras
+
+    // Shadows
     shadow: theme === 'light' ? 'shadow-lg' : 'shadow-2xl shadow-black/20',
     cardShadow: theme === 'light' ? 'shadow-md' : 'shadow-xl shadow-black/10',
   }
 }
 
-// Hook para saber si el tema está disponible (no está cargando)
+/**
+ * Hook for check if theme is available (not loading)
+ * @returns True if theme is available, otherwise false
+ */
 export function useThemeReady() {
   const { isLoading } = useTheme()
   return !isLoading

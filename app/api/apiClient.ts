@@ -6,6 +6,13 @@ const defaultHeaders = {
   "Content-Type": "application/json",
 };
 
+/**
+ * API client for make requests to the server
+ * @param endpoint The endpoint of the request
+ * @param options The options of the request
+ * @returns The response of the request
+ * @throws Error if the request fails
+ */
 export default async function request<T>(
   endpoint: string,
   options: RequestOptions = {},
@@ -17,6 +24,7 @@ export default async function request<T>(
     headers: {
       ...defaultHeaders,
       ...options.headers,
+      "Authorization": `Bearer ${token}`,
     },
     body: options.body ? JSON.stringify(options.body) : undefined,
   };

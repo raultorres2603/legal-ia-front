@@ -1,14 +1,12 @@
 @import "tailwindcss";
 
-/* Variables CSS para los temas */
 :root {
-  /* Modo Claro */
   --color-legal-gold: #F4B942;
   --color-tech-blue: #1E88E5;
   --color-corporate-gray: #4A5568;
 
-  --color-bg-primary: #F8FAFC;  /* 🌊 Blanco azulado suave */
-  --color-bg-secondary: #F1F5F9; /* Azul muy claro para cards */
+  --color-bg-primary: #F8FAFC;
+  --color-bg-secondary: #F1F5F9;
   --color-bg-tertiary: #E2E8F0;
 
   --color-text-primary: #2C3E50;
@@ -30,13 +28,12 @@
 }
 
 .dark {
-  /* Modo Oscuro */
   --color-legal-gold: #D4A92A;
   --color-tech-blue: #1565C0;
   --color-corporate-gray: #718096;
 
-  --color-bg-primary: #0F1419;   /* 🌊 Azul marino oscuro */
-  --color-bg-secondary: #1A2332; /* Azul más claro para cards */
+  --color-bg-primary: #0F1419;
+  --color-bg-secondary: #1A2332;
   --color-bg-tertiary: #2D3748;
 
   --color-text-primary: #E2E8F0;
@@ -57,7 +54,7 @@
   --shadow-tech: 0 4px 15px rgba(21, 101, 192, 0.3);
 }
 
-/* Estilos base para el tema */
+/* Base styles for theme */
 * {
   transition-property: background-color, border-color, color, fill, stroke, box-shadow;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -74,7 +71,7 @@ body {
   font-feature-settings: 'rlig' 1, 'calt' 1;
 }
 
-/* Clases utilitarias personalizadas */
+/* Custom utility classes */
 .bg-legal-gradient {
   background: var(--gradient-legal);
 }
@@ -135,7 +132,7 @@ body {
   box-shadow: var(--shadow-card);
 }
 
-/* Scrollbar personalizada */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -153,7 +150,7 @@ body {
   background: var(--color-tech-blue);
 }
 
-/* Focus styles mejorados */
+/* Focus styles improved */
 .focus-legal:focus {
   outline: 2px solid var(--color-legal-gold);
   outline-offset: 2px;
@@ -164,7 +161,7 @@ body {
   outline-offset: 2px;
 }
 
-/* Animaciones de entrada */
+/* Entry animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -181,7 +178,7 @@ body {
   animation: fadeIn 0.3s ease-out;
 }
 
-/* Prevenir flash de contenido sin estilo */
+/* Prevents flash of unstyled content */
 .no-flash * {
   transition: none !important;
   animation: none !important;

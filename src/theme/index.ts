@@ -1,9 +1,9 @@
-// Exportaciones principales del sistema de temas
+// Main exports from the theme system
 export { ThemeProvider, useTheme as useThemeContext } from '@/contexts/ThemeContext'
 export { useTheme, useThemeClasses } from '@/hooks/useTheme'
 export { default as ThemeToggle } from '@/components/ThemeToggle'
 
-// Tipos y constantes útiles
+// Useful types and constants
 export type Theme = 'light' | 'dark'
 
 export const themeColors = {

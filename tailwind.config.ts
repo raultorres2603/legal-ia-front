@@ -32,7 +32,7 @@ const config: Config = {
         'text-muted-light': '#9CA3AF',
         'text-muted-dark': '#64748B',
 
-        // Estados
+        // Stats
         'success-light': '#28A745',
         'success-dark': '#22C55E',
         'error-light': '#DC3545',
@@ -42,20 +42,18 @@ const config: Config = {
         'info-light': '#17A2B8',
         'info-dark': '#0EA5E9',
 
-        // Bordes
+        // Bord
         'border-primary-light': '#E2E8F0',
         'border-primary-dark': '#4A5568',
         'border-secondary-light': '#CBD5E0',
         'border-secondary-dark': '#718096',
       },
 
-      // Gradientes personalizados
       backgroundImage: {
         'legal-gradient-light': 'linear-gradient(135deg, #F4B942 0%, #1E88E5 100%)',
         'legal-gradient-dark': 'linear-gradient(135deg, #D4A92A 0%, #1565C0 100%)',
       },
 
-      // Sombras personalizadas
       boxShadow: {
         'legal-light': '0 10px 30px rgba(244, 185, 66, 0.15)',
         'legal-dark': '0 10px 30px rgba(212, 169, 42, 0.15)',
@@ -65,7 +63,6 @@ const config: Config = {
         'card-dark': '0 2px 8px rgba(0, 0, 0, 0.3)',
       },
 
-      // Transiciones personalizadas
       transitionProperty: {
         'theme': 'background-color, border-color, color, fill, stroke, box-shadow',
       },

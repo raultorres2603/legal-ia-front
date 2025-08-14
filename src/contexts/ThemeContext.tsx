@@ -18,9 +18,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // Función para obtener el tema inicial
+    // Function to get the initial theme
     const getInitialTheme = (): Theme => {
-      // Primero intentar desde localStorage
+      // First try to get the theme from localStorage
       try {
         const savedTheme = localStorage.getItem('legal-ia-theme')
         if (savedTheme === 'light' || savedTheme === 'dark') {
@@ -30,7 +30,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         console.warn('Error accessing localStorage:', error)
       }
 
-      // Si no hay tema guardado, usar preferencia del sistema
+      // If no theme is saved, use system preference
       try {
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
           return 'dark'
@@ -39,7 +39,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         console.warn('Error accessing media query:', error)
       }
 
-      // Por defecto, usar tema claro
+      // Default theme is light
       return 'light'
     }
 
@@ -47,13 +47,13 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setThemeState(initialTheme)
     setIsLoading(false)
 
-    // Aplicar el tema inmediatamente
+    // Apply the theme immediately
     const root = document.documentElement
     root.classList.remove('light', 'dark')
     root.classList.add(initialTheme)
   }, [])
 
-  // Aplicar cambios de tema
+  // Apply changes on theme
   useEffect(() => {
     if (isLoading) return
 
@@ -61,7 +61,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     root.classList.remove('light', 'dark')
     root.classList.add(theme)
 
-    // Guardar en localStorage
+    // Save theme in localStorage
     try {
       localStorage.setItem('legal-ia-theme', theme)
     } catch (error) {
@@ -99,7 +99,7 @@ export function useTheme() {
   return context
 }
 
-// Hook adicional para componentes que necesitan saber si el tema está cargando
+// Additional hook for components that need to know if the theme is loading
 export function useThemeWithLoading() {
   return useTheme()
 }
